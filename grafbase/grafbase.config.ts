@@ -24,7 +24,7 @@ const Project = g.model('Project', {
   rules.public().read(),
   rules.private().create().delete().update();
 })
-
+// @ts-ignore
 const jwt = auth.JWT({
   issuer: 'grafbase',
   secret: g.env('NEXTAUTH_SECRET'),
