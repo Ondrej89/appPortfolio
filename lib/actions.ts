@@ -3,10 +3,15 @@ import { GraphQLClient } from "graphql-request";
 import { createProjectMutation, createUserMutation,deleteProjectMutation,getProjectByIdQuery,getProjectsOfUserQuery,getUserQuery, projectsQuery, updateProjectMutation } from "@/graphql";
 import { ProjectForm } from "@/common.types";
 
-const isProduction = process.env.NODE_ENV === 'production';
-const apiUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL || '' : 'http://127.0.0.1:4000/graphql';
-const apiKey = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : 'letmein';
-const serverUrl = isProduction ? process.env.NEXT_PUBLIC_SERVER_URL : 'http://localhost:3000';
+// const isProduction = process.env.NODE_ENV === 'production';
+// const apiUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL || '' : 'http://127.0.0.1:4000/graphql';
+// const apiKey = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : 'letmein';
+// const serverUrl = isProduction ? process.env.NEXT_PUBLIC_SERVER_URL : 'http://localhost:3000';
+
+const apiUrl= 'https://appportfolio-main-awsondrejdudas-gmailcom.grafbase.app/graphql'
+const serverUrl = 'https://app-portfolio-pearl.vercel.app'
+const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODk0MzAwNDEsImlzcyI6ImdyYWZiYXNlIiwiYXVkIjoiMDFINUNZMThFMlZXVzRCME04MVFaVEo4NUYiLCJqdGkiOiIwMUg1Q1kxOEhCOTk4MzgzSERXNzVFQ1M3SyIsImVudiI6InByb2R1Y3Rpb24iLCJwdXJwb3NlIjoicHJvamVjdC1hcGkta2V5In0.E9wMx2ReF0SsrpFij2Ng7iVc58j_q0r9o_kUTIslOA8'
+
 
 const client = new GraphQLClient(apiUrl);
 
