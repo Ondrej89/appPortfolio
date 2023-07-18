@@ -1,8 +1,11 @@
+"use client"
 import { ProjectInterface } from "@/common.types"
 import Categories from "@/components/Categories";
 // import LoadMore from "@/components/LoadMore";
 import ProjectCard from "@/components/ProjectCard";
 import { fetchAllProjects } from "@/lib/actions"
+
+import { useEffect } from 'react';
 
 
 type ProjectSearch = {
@@ -26,6 +29,19 @@ type Props = {
 }
 
 const Home = async ({searchParams:{category}}:Props) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const { search } = window.location;
+      const categoryParam = 'category=Frontend';
+      const hasCategoryParam = search.includes(categoryParam);
+
+      if (!hasCategoryParam) {
+        const newURL = `${window.location.origin}/?${categoryParam}${search}`;
+        window.location.href = newURL;
+      }
+    }
+  }, []);
+
   const data = await fetchAllProjects(category) as ProjectSearch
 
   const projectsToDisplay = data?.projectSearch?.edges || [];
