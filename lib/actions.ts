@@ -45,12 +45,12 @@ const makeGraphQLRequest = async (query: string | null, variables = {}) => {
 };
 
 export const fetchAllProjects = (
-	category?: string | null,
-	endcursor?: string | null
+	category?: string,
+	endcursor?: string 
 ) => {
 	client.setHeader("x-api-key", apiKey);
 
-    const validCategory = category ?? '';
+    const validCategory = category ?? category;
 
 	return makeGraphQLRequest(projectsQuery, { category: validCategory, endcursor });
 };
