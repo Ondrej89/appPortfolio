@@ -11,7 +11,7 @@ const Footer = () => {
           width={150}
           height={80}
           alt='logo'/>
-          <p className=' text-center text-sm font-normal mt-5 max-w-xs'>Portfolio is an app where my projects live.</p>
+          <p className=' text-center text-sm font-normal mt-5 max-w-xs'>Portfolio is an app where you share your awesome projects.</p>
         </div>
         <div className='FlexBetween footer_copywright'>
         <p>@ 2023 Portfolio. Designed by LoneWolf</p>
